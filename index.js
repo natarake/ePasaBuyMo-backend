@@ -19,11 +19,11 @@ mongoose
     console.log(err);
   });
 
-app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next()
-  });
+// app.all('/', function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//     next()
+//   });
 
 // app.use(cors(
 //   {
@@ -48,9 +48,10 @@ app.all('/', function(req, res, next) {
 // // app.options('/*', (_, res) => {
 // //     res.sendStatus(200);
 // // });
+app.use(cors());
 
 app.use(express.json());
-app.use("api/auth", authRoute);
+app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/cart", cartRoute);

@@ -19,11 +19,8 @@ mongoose
     console.log(err);
   });
 
-app.use(
-  cors({
-    origin: ["https://epasabuymo.onrender.com/", "*"],
-  })
-);
+app.use(cors({origin: ["*"]}));
+
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

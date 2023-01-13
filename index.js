@@ -23,14 +23,13 @@ app.use(cors({
 origin: ["https://vercel.com/natarake/e-pasa-buy-mo","http://localhost:3000"]
 }));
 app.use((req, res, next) => {
-res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-app.options('*', cors());
-app.options('/*', (_, res) => {
-    res.sendStatus(200);
-});
+// app.options('/*', (_, res) => {
+//     res.sendStatus(200);
+// });
 
 app.use(express.json());
 app.use("/api/auth", authRoute);

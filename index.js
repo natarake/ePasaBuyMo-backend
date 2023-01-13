@@ -20,6 +20,10 @@ mongoose
   });
 
 app.use(cors({origin:true,credentials: true}));
+app.options('*', cors());
+app.options('/*', (_, res) => {
+    res.sendStatus(200);
+});
 
 app.use(express.json());
 app.use("/api/auth", authRoute);

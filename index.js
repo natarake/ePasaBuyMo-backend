@@ -19,7 +19,9 @@ mongoose
     console.log(err);
   });
 
-app.use(cors());
+app.use(cors({
+origin: ["https://vercel.com/natarake/e-pasa-buy-mo","http://localhost:3000"]
+}));
 app.use((req, res, next) => {
 res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

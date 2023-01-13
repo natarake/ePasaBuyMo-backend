@@ -21,7 +21,7 @@ mongoose
 
 app.use(
   cors({
-    origin: ["https://epasabuymo.onrender.com/", process.env.CORS_ORIGIN_2],
+    origin: ["https://epasabuymo.onrender.com/", "*"],
   })
 );
 app.use(express.json());

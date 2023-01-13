@@ -19,11 +19,20 @@ mongoose
     console.log(err);
   });
 
-app.use(cors(
-  {
-    origin: ["*"],
-    optionsSuccessStatus: 200
-  }));
+// app.use(cors(
+//   {
+//     origin: ["*"],
+//     optionsSuccessStatus: 200
+//   }));
+
+app.use(cors({
+    'allowedHeaders': ['Content-Type'], // headers that React is sending to the API
+    'exposedHeaders': ['Content-Type'], // headers that you are sending back to React
+    'origin': '*',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
+}));
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

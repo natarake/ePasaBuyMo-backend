@@ -19,7 +19,7 @@ mongoose
     console.log(err);
   });
 
-app.use(cors({origin: ["*"]}));
+app.use(cors({origin: ["https://e-pasa-buy-mo.vercel.app/","*"]}));
 
 app.use(express.json());
 app.use("/api/auth", authRoute);

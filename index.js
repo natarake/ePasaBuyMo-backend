@@ -50,7 +50,7 @@ app.all('/', function(req, res, next) {
 // // });
 
 app.use(express.json());
-app.use("/api/auth", authRoute);
+app.use("api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/cart", cartRoute);

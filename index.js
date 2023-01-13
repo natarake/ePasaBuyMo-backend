@@ -19,7 +19,7 @@ mongoose
     console.log(err);
   });
 
-app.use(cors({origin:true,credentials: true}));
+app.use(cors());
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
